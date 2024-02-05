@@ -3,14 +3,16 @@ import React, { ReactNode, type FC } from "react"
 
 type PrimaryButtonProps = {
   children: ReactNode
+  onPress: () => void
 }
 
-const PrimaryButton: FC<PrimaryButtonProps> = ({ children }) => {
+const PrimaryButton: FC<PrimaryButtonProps> = ({ children, onPress }) => {
   return (
     <View style={styles.buttonContainerOuter}>
       <Pressable
         style={styles.buttonContainerInner}
         android_ripple={{ color: "640233" }}
+        onPress={onPress}
       >
         <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
