@@ -1,8 +1,10 @@
 import { View, Text, StyleSheet, TextInput, Alert } from "react-native"
-import React, { useState } from "react"
+import React, { useState, type FC } from "react"
 import PrimaryButton from "../components/PrimaryButton"
 
-const StartGameScreen = () => {
+const StartGameScreen: FC<{ onPickNumber: (number: number) => void }> = ({
+  onPickNumber,
+}) => {
   const [enteredNumber, setEnteredNumber] = useState("")
 
   const inputHandler = () => {
@@ -19,8 +21,9 @@ const StartGameScreen = () => {
           },
         ]
       )
+    } else {
+      onPickNumber(chosenNumber)
     }
-    console.log("game started")
 
     return
   }
