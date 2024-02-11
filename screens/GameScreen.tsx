@@ -64,11 +64,11 @@ const GameScreen = ({
       <View>
         <Text>Higher or lower?</Text>
         <View style={styles.buttonContainer}>
-          <PrimaryButton onPress={nextGuess.bind(this, "higher")}>
-            Higher
-          </PrimaryButton>
           <PrimaryButton onPress={nextGuess.bind(this, "lower")}>
             Lower
+          </PrimaryButton>
+          <PrimaryButton onPress={nextGuess.bind(this, "higher")}>
+            Higher
           </PrimaryButton>
         </View>
         <View>
