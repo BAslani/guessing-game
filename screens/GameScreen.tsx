@@ -61,8 +61,8 @@ const GameScreen = ({
       <View style={styles.numberContainer}>
         <Text style={styles.number}>{currentGuess}</Text>
       </View>
-      <View>
-        <Text>Higher or lower?</Text>
+      <View style={styles.container}>
+        <Text style={styles.instruction}>Higher or lower?</Text>
         <View style={styles.buttonContainer}>
           <PrimaryButton onPress={nextGuess.bind(this, "lower")}>
             Lower
@@ -71,9 +71,9 @@ const GameScreen = ({
             Higher
           </PrimaryButton>
         </View>
-        <View>
-          <Text>Logs</Text>
-        </View>
+      </View>
+      <View>
+        <Text>Logs</Text>
       </View>
     </View>
   )
@@ -83,6 +83,24 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 24,
+  },
+  container: {
+    marginHorizontal: 24,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 36,
+    padding: 16,
+    backgroundColor: colors.priary800,
+    borderRadius: 8,
+    elevation: 6,
+    shadowColor: "#222",
+    shadowOffset: { width: 2, height: 4 },
+    shadowRadius: 6,
+    shadowOpacity: 0.2,
+  },
+  instruction: {
+    color: colors.accent500,
+    fontSize: 24,
   },
   numberContainer: {
     borderWidth: 4,
