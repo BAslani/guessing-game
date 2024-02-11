@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
   },
   instruction: {
+    fontFamily: "open-sans",
     color: colors.accent500,
     fontSize: 24,
   },

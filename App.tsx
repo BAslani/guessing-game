@@ -5,10 +5,16 @@ import GameScreen from "./screens/GameScreen"
 import { useState } from "react"
 import colors from "./constants/colors"
 import GameOverScreen from "./screens/GameOverScreen"
+import { useFonts } from "expo-font"
 
 const App = () => {
   const [userNumber, setUserNumber] = useState<number | null>(null)
   const [gameOver, setGameOver] = useState(true)
+
+  useFonts({
+    "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
+    "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
+  })
 
   const numberPickHandler = (pickedNumber: number) => {
     setUserNumber(pickedNumber)
